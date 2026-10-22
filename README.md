@@ -1,32 +1,50 @@
-# React + TypeScript + Vite
+# React Component Library
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+## About
+This project contains three reusable components built with React, TypeScript, and CSS.
 
-Currently, two official plugins are available:
+- **AlertBox:** Displays success, error, warning, and info messages.
+- **UserProfileCard:** Displays user information such as name, email, and role.
+- **ProductDisplay:** Displays product details, price, and stock status.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## How to Run
 
-## React Compiler
+1. Install dependencies:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+   ```bash
+   npm install
+   ```
 
-## Expanding the Oxlint configuration
+2. Start the application:
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+   ```bash
+   npm run dev
+   ```
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+3. Open the local URL shown in the terminal.
+
+## How to Use
+
+Import the component you want to use:
+
+```tsx
+import { AlertBox } from './components/AlertBox/AlertBox';
+import { UserProfileCard } from './components/UserProfileCard/UserProfileCard';
+import { ProductDisplay } from './components/ProductDisplay/ProductDisplay';
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Pass the required props to each component.
+
+## Features
+
+- Reusable components
+- TypeScript for type safety
+- Optional props and callback functions
+- Custom CSS styling
+
+## Technologies
+
+- React
+- TypeScript
+- CSS
+- Vite
