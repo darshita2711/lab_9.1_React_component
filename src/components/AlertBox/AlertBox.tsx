@@ -1,9 +1,35 @@
-// types/index.ts
-export type AlertType = 'success' | 'error' | 'warning' | 'info';
- 
-export interface AlertBoxProps {
-  type: AlertType;
-  message: string;
-  onClose?: () => void;
-  children?: React.ReactNode;
+
+import type { AlertBoxProps } from '../../types';
+
+
+export function AlertBox({
+  type,
+  message,
+  onClose,
+  children,
+}: AlertBoxProps) {
+  const alertStyles = {
+    success: 'alert-success',
+    error: 'alert-error',
+    warning: 'alert-warning',
+    info: 'alert-info',
+  };
+
+  return (
+    <div className={`alert-box ${alertStyles[type]}`}>
+      <div className="alert-content">
+        <p>{message}</p>
+
+        {onClose && (
+          <button type="button" onClick={onClose}>
+            ×
+          </button>
+        )}
+      </div>
+
+      {children && (
+        <div className="alert-children">{children}</div>
+      )}
+    </div>
+  );
 }
